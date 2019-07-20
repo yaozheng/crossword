@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>填字游戏</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="crossword.js"></script>
+</head>
+<body>
+<style>
+.selh { background-color: #FEDBFF; }
+.selv { background-color: #E5FEFF; }
+.selh a , .selv a { color: black; }
+.error { color:red; }
+td.none { background-color:#6D6D6D; }
+#header {font-size:24px; font-weight:bold; text-align: center; margin: 10px 0;}
+#main { margin:0 auto;}
+#tips { border: 1px solid gray; margin: 10px auto;padding: 5px;max-width:600px;line-height: 20px; background-color: white;}
+#game { background-color:#6D6D6D;overflow:auto;margin: 0 auto;-webkit-box-shadow:3px 3px 5px #292929;-moz-box-shadow:3px 3px 5px #292929;box-shadow:3px 3px 5px #292929;}
+#game input { border:none; text-align:center; font-size:16px; line-height:30px;border:0}
+#game input.sel { background-color: #F9E909;font-weight:bold; }
+#game td {border:0.5px solid gray;}
+#buttons {text-align:center; margin:20px;}
+#inputanswer #answer {width: 200px; height:25px;line-height:25px;text-align:left;}
+</style>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 content">
+
+			<div id="header">中文填字游戏<span></span></div>
+			<div id="tips">
+				<p><strong>提示：（注：点击提示文字可以直接输入答案）</strong></p>
+				<p>横向：<span id="tip_h">无</span></p>
+				<p>纵向：<span id="tip_v">无</span></p>
+			</div>
+
+			<div id="buttons">
+				<button type="button" class="btn btn-danger" id="btn_tip">提示(<span></span>)</button>&nbsp;&nbsp;&nbsp;
+				<button type="button" class="btn btn-danger" id="btn_finish">提交答案</button>&nbsp;&nbsp;&nbsp;
+				<button type="button" class="btn btn-danger" id="btn_restart">重新开始本局</button>&nbsp;&nbsp;&nbsp;
+				<button type="button" class="btn btn-danger" id="btn_restartnew">开始新局</button>&nbsp;&nbsp;&nbsp;
+			</div>
+
+			<div id="main">
+				<table id="game" cellspacing="1" cellpadding="0"></table>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+document.oncontextmenu = function(){return false;}
+</script>
+</body>
+</html>
